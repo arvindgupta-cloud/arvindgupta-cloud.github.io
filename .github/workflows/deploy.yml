@@ -18,7 +18,7 @@ jobs:
 
       - name: Deploy to Netlify
         run: |
-          curl -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+          curl -H "Authorization: Bearer ${{ secrets.Or-VSEUAiUBbScShyvRRz1cNuAmwP-E7a6K6K-E7ou0 }}" \
           -X POST -F file=@./index.html \
           https://api.netlify.com/api/v1/sites/60030752-132a-4d76-a04d-d5e71fc87e71/deploys
 
@@ -47,6 +47,6 @@ jobs:
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.run_id, # Using run ID as fallback for non-PR workflows
-              body: `✅ Your website is live at: [https://uniqueportpolio.netlify.app](https://uniqueportpolio.netlify.app)`
+              issue_number: context.payload.pull_request?.number || 0,
+              body: "✅ Your website is live at: [https://uniqueportpolio.netlify.app](https://uniqueportpolio.netlify.app)"
             });
