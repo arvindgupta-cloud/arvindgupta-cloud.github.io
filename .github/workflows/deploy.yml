@@ -20,3 +20,32 @@ jobs:
       - name: Print Deployed URL
         run: |
           echo "Your website is live at: https://uniqueportpolio.netlify.app"
+      
+      - name: Update Commit Status with URL
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { context, github } = require("@actions/github");
+            github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: "success", // Options: success, failure, pending, error
+              description: "Website successfully deployed!",
+              context: "Netlify Deployment",
+              target_url: "https://uniqueportpolio.netlify.app"
+            });
+      - name: Post Comment with Deployed URL
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { context, github } = require("@actions/github");
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request
+                ? context.payload.pull_request.number
+                : context.sha,
+              body: `✅ Your website is live at: [https://uniqueportpolio.netlify.app](https://uniqueportpolio.netlify.app)`
+            });
+
