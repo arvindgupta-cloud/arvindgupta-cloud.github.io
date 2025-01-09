@@ -17,3 +17,6 @@ jobs:
           curl -H "Authorization: Bearer ${{ secrets.Or-VSEUAiUBbScShyvRRz1cNuAmwP-E7a6K6K-E7ou0 }}" \
           -X POST -F file=@./index.html \
           https://api.netlify.com/api/v1/sites/60030752-132a-4d76-a04d-d5e71fc87e71/deploys
+      - name: Print Deployed URL
+        run: |
+          echo "Your website is live at: https://uniqueportpolio.netlify.app"
