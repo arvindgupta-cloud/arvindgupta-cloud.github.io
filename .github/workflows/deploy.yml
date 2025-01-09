@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  statuses: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,7 +18,7 @@ jobs:
 
       - name: Deploy to Netlify
         run: |
-          curl -H "Authorization: Bearer ${{ secrets.Or-VSEUAiUBbScShyvRRz1cNuAmwP-E7a6K6K-E7ou0 }}" \
+          curl -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
           -X POST -F file=@./index.html \
           https://api.netlify.com/api/v1/sites/60030752-132a-4d76-a04d-d5e71fc87e71/deploys
 
@@ -35,18 +39,14 @@ jobs:
               context: "Netlify Deployment",
               target_url: "https://uniqueportpolio.netlify.app"
             });
+
       - name: Post Comment with Deployed URL
         uses: actions/github-script@v6
         with:
           script: |
-            const { context, github } = require("@actions/github");
             github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.payload.pull_request
-                ? context.payload.pull_request.number
-                : context.sha,
+              issue_number: context.run_id, # Using run ID as fallback for non-PR workflows
               body: `✅ Your website is live at: [https://uniqueportpolio.netlify.app](https://uniqueportpolio.netlify.app)`
             });
-      
-                  
