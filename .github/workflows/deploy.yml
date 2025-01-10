@@ -40,13 +40,13 @@ jobs:
               target_url: "https://uniqueportpolio.netlify.app"
             });
 
-      - name: Post Comment with Deployed URL
+      - name: Post Commit Comment with Deployed URL
         uses: actions/github-script@v6
         with:
           script: |
-            github.rest.issues.createComment({
+            github.rest.repos.createCommitComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.payload.pull_request?.number || 0,
+              commit_sha: context.sha,
               body: "✅ Your website is live at: [https://uniqueportpolio.netlify.app](https://uniqueportpolio.netlify.app)"
             });
