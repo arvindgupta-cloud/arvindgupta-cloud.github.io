@@ -131,6 +131,105 @@
           max-height: 80%; /* Adjust image size on mobile */
         }
       }
+
+    
+    /* Styling for the certificates counter section */
+.ftco-section.ftco-counter {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* Subtle gradient background */
+  padding: 60px 0; /* Balanced padding */
+  color: #333; /* Dark text for readability */
+}
+
+.ftco-counter .container {
+  max-width: 1140px; /* Standard container width */
+  margin: 0 auto; /* Centered container */
+}
+
+.ftco-counter .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ftco-counter .counter-wrap {
+  text-align: center; /* Centered content */
+  padding: 20px; /* Inner padding */
+  background: #fff; /* White background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.ftco-counter .counter-wrap:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.ftco-counter .block-18 {
+  padding: 20px; /* Inner spacing */
+}
+
+.ftco-counter h2 {
+  font-size: 28px; /* Prominent heading */
+  font-weight: 600; /* Bold for emphasis */
+  color: #1a73e8; /* Professional blue accent */
+  margin-bottom: 20px; /* Spacing below heading */
+  text-transform: uppercase; /* Clean, professional look */
+  letter-spacing: 1px; /* Slight letter spacing */
+}
+
+.ftco-counter .text ul {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* No padding */
+  margin: 0; /* No margin */
+}
+
+.ftco-counter .text li {
+  margin-bottom: 15px; /* Spacing between list items */
+  font-size: 18px; /* Readable font size */
+  line-height: 1.5; /* Comfortable line height */
+}
+
+.ftco-counter .text li a {
+  color: #1a73e8; /* Google-blue link color */
+  text-decoration: none; /* No underline */
+  font-weight: 500; /* Medium weight for emphasis */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.ftco-counter .text li a:hover {
+  color: #0d47a1; /* Darker blue on hover */
+  text-decoration: underline; /* Underline on hover for clarity */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ftco-counter .counter-wrap {
+    padding: 15px; /* Reduced padding for smaller screens */
+  }
+
+  .ftco-counter h2 {
+    font-size: 24px; /* Slightly smaller heading */
+  }
+
+  .ftco-counter .text li {
+    font-size: 16px; /* Smaller font for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .ftco-section.ftco-counter {
+    padding: 40px 0; /* Reduced section padding */
+  }
+
+  .ftco-counter .counter-wrap {
+    margin: 0 15px; /* Margin for small screens */
+  }
+}
+
+/* Hide the 'hid' class content as per HTML */
+.hid {
+  visibility: hidden; /* Respect existing HTML */
+}
     </style>
   </head>
 
@@ -429,31 +528,26 @@
       </div>
     </section>
 
+    <!-- Existing Certificates, Contact, and Footer Sections remain unchanged -->
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
       <div class="hid" style="visibility:hidden">
         <div class="container">
-          
           <div class="row d-md-flex align-items-center">
             <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-              
               <div class="block-18">
                 <span><h2>Certificates</h2></span>
                 <div class="text">
-                  
-                <ul style="list-style-type: none; padding-left: 0;">
-                  <li><a href="https://www.credly.com/badges/1e49d0d4-1099-42f1-890c-a495653142a8/public_url" class="number">Google Cloud Certified: Professional Cloud Devops Engineer</a></li>
-                  <li><a href="https://www.credly.com/badges/a266fb5a-f569-4a58-ad83-7ba17961e371/public_url" class="number">Google Cloud Certified: Professional Cloud Architect</a></li>
-                  <li><a href="https://www.credly.com/badges/92e643e5-d181-4e7b-a99e-d4df18fd6aef/public_url" class="number">Google Cloud Certified: Associate Cloud Engineer</a></li>
-                </ul>
+                  <ul style="list-style-type: none; padding-left: 0;">
+                    <li><a href="https://www.credly.com/badges/1e49d0d4-1099-42f1-890c-a495653142a8/public_url" class="number">Google Cloud Certified: Professional Cloud Devops Engineer</a></li>
+                    <li><a href="https://www.credly.com/badges/a266fb5a-f569-4a58-ad83-7ba17961e371/public_url" class="number">Google Cloud Certified: Professional Cloud Architect</a></li>
+                    <li><a href="https://www.credly.com/badges/92e643e5-d181-4e7b-a99e-d4df18fd6aef/public_url" class="number">Google Cloud Certified: Associate Cloud Engineer</a></li>
+                  </ul>
                 </div>
               </div>
             </div>
-           
-            <!-- <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"> <div class="block-18"> <div class="text"> <strong class="number" data-number="1000">0</strong> <span>Mentored Students</span> </div> </div> </div> <div class="col-md d-flex justify-content-center counter-wrap ftco-animate"> <div class="block-18"> <div class="text"> <strong class="number" data-number="500">0</strong> <span>Cups of coffee</span> </div> </div> </div> -->
           </div>
         </div>
       </div>
-
     </section>
 
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
