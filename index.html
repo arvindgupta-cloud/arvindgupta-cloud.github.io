@@ -101,10 +101,12 @@
       }
     
       /* Center and fit me.png in hero section */
-      .one-third {
-        background-position: center !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
+
+      .one-third img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* or object-fit: contain */
+        object-position: center;
       }
     
       @media screen and (orientation: portrait) {
