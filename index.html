@@ -102,13 +102,14 @@
     
       /* Center and fit me.png in hero section */
 
-      .one-third img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* or object-fit: contain */
-        object-position: center;
-      }
-    
+      one-third {
+  background-position: center !important; /* Center the image horizontally and vertically */
+  background-size: cover !important; /* Scale to cover the container, maintaining aspect ratio */
+  background-repeat: no-repeat !important; /* Prevent repetition */
+  width: 100% !important; /* Ensure full width of the parent */
+  height: 100vh !important; /* Full viewport height for hero section */
+  position: relative; /* Ensure proper positioning of overlay */
+}
       @media screen and (orientation: portrait) {
         body {
           margin-left: 5%;
