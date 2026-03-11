@@ -24,7 +24,7 @@ jobs:
 
       - name: Print Deployed URL
         run: |
-          echo "Your website is live at: https://arvindguptaportpolio.netlify.app"
+          echo "Your website is live at: https://arvindguptaportfolio.netlify.app"
 
       - name: Update Commit Status with URL
         uses: actions/github-script@v6
@@ -37,7 +37,7 @@ jobs:
               state: "success",
               description: "Website successfully deployed!",
               context: "Netlify Deployment",
-              target_url: "https://arvindguptaportpolio.netlify.app"
+              target_url: "https://arvindguptaportfolio.netlify.app"
             });
 
       - name: Post Commit Comment with Deployed URL
@@ -48,5 +48,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               commit_sha: context.sha,
-              body: "✅ Your website is live at: [https://arvindguptaportpolio.netlify.app](https://arvindguptaportpolio.netlify.app)"
+              body: "✅ Your website is live at: [https://arvindguptaportfolio.netlify.app](https://arvindguptaportfolio.netlify.app)"
             });
